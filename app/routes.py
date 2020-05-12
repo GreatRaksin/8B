@@ -5,6 +5,7 @@ from app import App
 
 
 @App.route('/')
+@App.route('/index')
 def index():
     words = ['привет', 'пока', 'я очень буду ждать звонка', 'полетели', 'hello']
     '''
