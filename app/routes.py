@@ -1,5 +1,6 @@
 from flask import render_template
 from app import App
+from app.forms import LoginForm
 
 # из папки app импортирую экземпляр класса Flask по имени App
 
@@ -13,3 +14,9 @@ def index():
         со своим массивом words, в котором лежат слова
     '''
     return render_template('index.html', words=words)
+
+
+@App.route('/sign_in')
+def signIn():
+    form = LoginForm()
+    return render_template('login.html', form=form)

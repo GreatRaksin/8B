@@ -1,21 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
     <div>
-        <label>Почта</label>
-        <input type="email">
+        {{ form.email.label }}  # поставил в форму подпись для поля email
+        {{ form.email() }}  # поставил само поле для ввода
     </div>
     <div>
-        <label>Пароль</label>
-        <input type="password">
+        {{ form.password.label }}
+        {{ form.password() }}
     </div>
     <div>
-        <input type="checkbox">
-        <label>Запомнить меня</label>
+        {{ form.remember() }}
+        {{ form.remember.label }}
     </div>
     <div>
-        <button type="submit">Войти</button>
+        {{ form.submit() }}
     </div>
 </form>
 {% endblock %}
